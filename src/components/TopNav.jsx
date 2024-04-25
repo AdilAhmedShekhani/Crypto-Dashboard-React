@@ -15,13 +15,16 @@ import { FaBars, FaCircleUser } from "react-icons/fa6";
 
 const TopNav = ({ title, onOpen }) => {
   return (
-    <Box px="4">
+    <Box px="4" bg="white">
       <HStack maxW="70rem" h="16" justify="space-between" mx="auto">
-        <Icon as={FaBars} onClick={onOpen} 
-        display={{
+        <Icon
+          as={FaBars}
+          onClick={onOpen}
+          display={{
             base: "block",
             lg: "none",
-        }}/>
+          }}
+        />
         <Heading fontWeight="medium" fontSize="28px">
           {title}
         </Heading>
