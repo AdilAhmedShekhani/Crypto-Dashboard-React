@@ -50,7 +50,17 @@ const PortfolioSection = () => {
           <HStack color="black.80">
             <Text fontSize="sm">Wallet Balances</Text>
           </HStack>
-          <HStack spacing={4}>
+          <HStack
+            spacing={2}
+            align={{
+              base: "flex-start",
+              sm: "start",
+            }}
+            flexDir={{
+              base: "column",
+              sm: "row",
+            }}
+          >
             <HStack>
               <Text textStyle="h2" fontWeight="medium">
                 22.39401000
