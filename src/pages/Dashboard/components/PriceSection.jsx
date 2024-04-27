@@ -5,6 +5,11 @@ import {
   Icon,
   Image,
   Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
   Tag,
   Text,
 } from "@chakra-ui/react";
@@ -13,7 +18,14 @@ import { FaArrowTrendUp, FaCirclePlus } from "react-icons/fa6";
 import { FaMinusCircle } from "react-icons/fa";
 
 const PriceSection = () => {
-  const timestamps = ["7:15 PM", "7:55 PM", "8:55 PM", "9:55 PM", "10:55 PM", "11:55 PM"];
+  const timestamps = [
+    "7:15 PM",
+    "7:55 PM",
+    "8:55 PM",
+    "9:55 PM",
+    "10:55 PM",
+    "11:55 PM",
+  ];
 
   return (
     <CustomCard>
@@ -51,14 +63,38 @@ const PriceSection = () => {
           <Button leftIcon={<Icon as={FaMinusCircle} />}>Sell</Button>
         </HStack>
       </Flex>
-      <Image w="100%" src="/graph.svg" mt="3rem" />
-      <HStack justify="space-between">
-        {timestamps.map((timestamp) => (
-          <Text key={timestamp} fontSize="sm" color="black.80">
-            {timestamp}
-          </Text>
-        ))}
-      </HStack>
+      <Tabs variant="soft-rounded">
+        <Flex justify="end">
+          <TabList bg="black.5" p="3px">
+            {["1H", "1D", "1W", "1M"].map((tab) => (
+              <Tab
+                _selected={{ bg: "white" }}
+                key={tab}
+                fontSize="sm"
+                p="6px"
+                borderRadius="4"
+              >
+                {tab}
+              </Tab>
+            ))}
+          </TabList>
+        </Flex>
+        <TabPanels>
+          <TabPanel>
+            <Image w="100%" src="/graph.svg" mt="3rem" />
+            <HStack justify="space-between">
+              {timestamps.map((timestamp) => (
+                <Text key={timestamp} fontSize="sm" color="black.80">
+                  {timestamp}
+                </Text>
+              ))}
+            </HStack>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </CustomCard>
   );
 };
