@@ -32,7 +32,7 @@ const PriceSection = () => {
       <Flex justify="space-between" align="start">
         <Stack>
           <HStack color="black.80">
-            <Text fontSize="sm">Wallet Balances</Text>
+            <Text fontSize="sm">Current Price</Text>
           </HStack>
           <HStack
             spacing={2}
@@ -47,7 +47,7 @@ const PriceSection = () => {
           >
             <HStack>
               <Text textStyle="h2" fontWeight="medium">
-                22.39401000
+              Rs.26,890.26
               </Text>{" "}
               <HStack fontWeight="medium" color="green">
                 <Icon as={FaArrowTrendUp} />
