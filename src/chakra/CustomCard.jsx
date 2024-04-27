@@ -1,5 +1,5 @@
 import { chakra } from "@chakra-ui/react";
 
-export const Card = chakra("div", {
+export const CustomCard = chakra("div", {
   baseStyle: { bg: "white", borderRadius: "xl", p: "6" },
 });
