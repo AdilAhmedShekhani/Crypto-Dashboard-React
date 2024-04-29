@@ -1,6 +1,16 @@
-import { Box, Flex, Icon, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Grid,
+  Icon,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { CustomCard } from "../../../chakra/CustomCard";
 import { FaBtc, FaRupeeSign } from "react-icons/fa6";
+import { Fragment } from "react";
 
 const Transactions = () => {
   const transactions = [
@@ -27,19 +37,39 @@ const Transactions = () => {
     },
   ];
   return (
-    <CustomCard>
-      <Text fontSize="sm" color="b">
+    <CustomCard h="full">
+      <Text mb="6" fontSize="sm" color="b">
         Recent Transactions
       </Text>
-      <Stack>
-        {transactions.map((transaction) => (
-          <Flex key={transaction.id}>
-            <Box boxSize={10} borderRadius="full">
-              <Icon as={transaction.icon} />
-            </Box>
-          </Flex>
+      <Stack spacing={4}>
+        {transactions.map((transaction, i) => (
+          <Fragment key={transaction.id}>
+            {i === 0 && <Divider />}
+            <Flex gap="4">
+              <Grid
+                placeItems="center"
+                bg="black.5"
+                boxSize={10}
+                borderRadius="full"
+              >
+                <Icon as={transaction.icon} />
+              </Grid>
+              <Flex justify="space-between" w="full">
+                <Stack spacing={0}>
+                  <Text textStyle="h6">{transaction.text}</Text>
+                  <Text fontSize="sm" color="black.40">
+                    {transaction.timestamp}
+                  </Text>
+                </Stack>
+                <Text textStyle="h6">{transaction.amount}</Text>
+              </Flex>
+            </Flex>
+          </Fragment>
         ))}
       </Stack>
+      <Button w="full" mt="6" colorScheme="gray">
+        View All
+      </Button>
     </CustomCard>
   );
 };
