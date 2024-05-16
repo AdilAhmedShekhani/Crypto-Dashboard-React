@@ -1,9 +1,7 @@
-const Support = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+import DashboardLayout from "../../components/DashboardLayout";
 
-export default Support
+const Support = () => {
+  return <DashboardLayout>Support Page</DashboardLayout>;
+};
+
+export default Support;

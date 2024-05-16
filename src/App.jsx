@@ -1,7 +1,8 @@
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Transactions from "./pages/Dashboard/components/Transactions";
+
 import Support from "./pages/Support/Support";
+import TransactionPage from "./pages/Transaction/Transaction";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/transactions",
-    element: <Transactions />,
+    element: <TransactionPage />,
   },
   {
     path: "/support",
