@@ -8,6 +8,8 @@ import {
   Td,
   TableCaption,
   TableContainer,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
 
 const TransactionTable = () => {
@@ -80,39 +82,51 @@ const TransactionTable = () => {
 
   return (
     <TableContainer>
-      <Table variant="simple">
-        <TableCaption>Imperial to metric conversion factors</TableCaption>
+      <Table variant="simple" colorScheme="gray">
         <Thead>
           <Tr>
-            <Th>To convert</Th>
-            <Th>into</Th>
-            <Th isNumeric>multiply by</Th>
+            <Th>ID</Th>
+            <Th>Date & Time</Th>
+            <Th>Type</Th>
+            <Th>Amount</Th>
+            <Th>Status</Th>
           </Tr>
         </Thead>
-        <Tbody>
-          <Tr>
-            <Td>inches</Td>
-            <Td>millimetres (mm)</Td>
-            <Td isNumeric>25.4</Td>
-          </Tr>
-          <Tr>
-            <Td>feet</Td>
-            <Td>centimetres (cm)</Td>
-            <Td isNumeric>30.48</Td>
-          </Tr>
-          <Tr>
-            <Td>yards</Td>
-            <Td>metres (m)</Td>
-            <Td isNumeric>0.91444</Td>
-          </Tr>
+        <Tbody color="p.black">
+          {tableData.map((data) => (
+            <Tr key={data.id}>
+              <Td fontSize="sm" fontWeight="medium">
+                {data.id}
+              </Td>
+              <Td>
+                <Stack spacing={0}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    {data.date}
+                  </Text>
+                  <Text fontSize="xs" color="black.60">
+                    {data.time}
+                  </Text>
+                </Stack>
+              </Td>
+              <Td>
+                <Stack spacing={0}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    {data.type.name}
+                  </Text>
+                  <Text fontSize="xs" color="black.60">
+                    {data.type?.tag}
+                  </Text>
+                </Stack>
+              </Td>
+              <Td fontSize="sm" fontWeight="medium">
+                {data.amount}
+              </Td>
+              <Td fontSize="sm" fontWeight="medium">
+                {data.status}
+              </Td>
+            </Tr>
+          ))}
         </Tbody>
-        <Tfoot>
-          <Tr>
-            <Th>To convert</Th>
-            <Th>into</Th>
-            <Th isNumeric>multiply by</Th>
-          </Tr>
-        </Tfoot>
       </Table>
     </TableContainer>
   );
