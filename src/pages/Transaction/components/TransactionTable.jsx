@@ -80,6 +80,13 @@ const TransactionTable = () => {
     },
   ];
 
+  const statusColor = {
+    pending: "#797E82",
+    processing: "#F5A50B",
+    completed: "#059669",
+    cancelled: "#DC2626"
+  };
+
   return (
     <TableContainer>
       <Table variant="simple" colorScheme="gray">
