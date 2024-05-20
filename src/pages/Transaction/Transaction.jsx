@@ -1,8 +1,19 @@
-import { Button, Card, Flex, Icon, Tag } from "@chakra-ui/react";
+import {
+  Button,
+  Card,
+  Flex,
+  HStack,
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Tag,
+} from "@chakra-ui/react";
 import DashboardLayout from "../../components/DashboardLayout";
 import { PiDownloadSimpleBold } from "react-icons/pi";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import TransactionTable from "./components/TransactionTable";
+import { BsSearch } from "react-icons/bs";
 
 const TransactionPage = () => {
   const tabs = [
@@ -31,17 +42,31 @@ const TransactionPage = () => {
           Export CSV
         </Button>
       </Flex>
-      <Card>
+      <Card borderRadius="1rem">
         <Tabs>
-          <TabList pt="4">
-            {tabs.map((tab) => (
-              <Tab key={tab.name} display="flex" gap="2">
-                {tab.name}{" "}
-                <Tag colorScheme="gray" borderRadius="full">
-                  {tab.count}
-                </Tag>
-              </Tab>
-            ))}
+          <TabList
+            pt="4"
+            display="flex"
+            w="full"
+            justifyContent="space-between"
+          >
+            <HStack>
+              {tabs.map((tab) => (
+                <Tab key={tab.name} display="flex" gap="2">
+                  {tab.name}{" "}
+                  <Tag colorScheme="gray" borderRadius="full">
+                    {tab.count}
+                  </Tag>
+                </Tab>
+              ))}
+            </HStack>
+
+            <InputGroup maxWidth="200px">
+              <InputLeftElement pointerEvents="none">
+                <Icon as={BsSearch} />
+              </InputLeftElement>
+              <Input type="tel" placeholder="Search..." />
+            </InputGroup>
           </TabList>
 
           <TabPanels>
@@ -49,10 +74,13 @@ const TransactionPage = () => {
               <TransactionTable />
             </TabPanel>
             <TabPanel>
-              <p>two!</p>
+              <TransactionTable />
             </TabPanel>
             <TabPanel>
-              <p>three!</p>
+              <TransactionTable />
+            </TabPanel>
+            <TabPanel>
+              <TransactionTable />
             </TabPanel>
           </TabPanels>
         </Tabs>

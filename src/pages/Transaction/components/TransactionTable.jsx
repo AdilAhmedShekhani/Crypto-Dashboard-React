@@ -10,6 +10,7 @@ import {
   TableContainer,
   Stack,
   Text,
+  Tag,
 } from "@chakra-ui/react";
 
 const TransactionTable = () => {
@@ -84,7 +85,7 @@ const TransactionTable = () => {
     pending: "#797E82",
     processing: "#F5A50B",
     completed: "#059669",
-    cancelled: "#DC2626"
+    cancelled: "#DC2626",
   };
 
   return (
@@ -129,7 +130,13 @@ const TransactionTable = () => {
                 {data.amount}
               </Td>
               <Td fontSize="sm" fontWeight="medium">
-                {data.status}
+                <Tag
+                  bg={statusColor[data.status]}
+                  color="white"
+                  borderRadius="full"
+                >
+                  {data.status}
+                </Tag>
               </Td>
             </Tr>
           ))}
