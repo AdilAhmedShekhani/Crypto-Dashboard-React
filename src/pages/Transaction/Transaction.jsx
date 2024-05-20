@@ -36,7 +36,7 @@ const TransactionPage = () => {
   ];
 
   return (
-    <DashboardLayout>
+    <DashboardLayout title="Transactions">
       <Flex justify="end" mt="6" mb="3">
         <Button leftIcon={<Icon as={PiDownloadSimpleBold} />}>
           Export CSV
@@ -52,7 +52,7 @@ const TransactionPage = () => {
           >
             <HStack>
               {tabs.map((tab) => (
-                <Tab key={tab.name} display="flex" gap="2">
+                <Tab key={tab.name} display="flex" gap="2" pb="4">
                   {tab.name}{" "}
                   <Tag colorScheme="gray" borderRadius="full">
                     {tab.count}
@@ -61,7 +61,7 @@ const TransactionPage = () => {
               ))}
             </HStack>
 
-            <InputGroup maxWidth="200px">
+            <InputGroup maxWidth="200px" pr="6">
               <InputLeftElement pointerEvents="none">
                 <Icon as={BsSearch} />
               </InputLeftElement>
