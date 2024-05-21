@@ -1,7 +1,12 @@
 import DashboardLayout from "../../components/DashboardLayout";
+import SupportCard from "../Transaction/components/SupportCard";
 
 const Support = () => {
-  return <DashboardLayout>Support Page</DashboardLayout>;
+  return (
+    <DashboardLayout>
+      <SupportCard />
+    </DashboardLayout>
+  );
 };
 
 export default Support;
