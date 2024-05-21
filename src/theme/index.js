@@ -114,8 +114,41 @@ export const theme = extendTheme(
     components: {
       Button: {
         baseStyle: {
-          fontWeight: "bold", 
-          BorderRadius:"10px"
+          fontWeight: "bold",
+          BorderRadius: "10px",
+        },
+      },
+      FormLabel: {
+        baseStyle: {
+          fontSize: "sm",
+        },
+      },
+      Input: {
+        variants: {
+          outline: {
+            field: {
+              h: "38px",
+              borderRadius: "8px",
+              fontSize: "sm",
+
+              _focus: {
+                boxShadow: "0 0 0 1px #5F00D9",
+              },
+            },
+          },
+        },
+      },
+      Textarea: {
+        variants: {
+          outline: {
+            h: "38px",
+            borderRadius: "8px",
+            fontSize: "sm",
+
+            _focus: {
+              boxShadow: "0 0 0 1px #5F00D9",
+            },
+          },
         },
       },
     },
