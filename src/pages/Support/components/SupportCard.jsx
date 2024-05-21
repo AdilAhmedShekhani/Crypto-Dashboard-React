@@ -30,36 +30,38 @@ const SupportCard = () => {
         </Text>
       </Stack>
       <Card p="6" borderRadius="1rem">
-        <Text fontWeight="medium" fontSize="sm">
-          You will receive respone within 24 hours of time of submit.
-        </Text>
-        <HStack>
-          <FormControl>
-            <FormLabel>Name</FormLabel>
-            <Input placeholder="Enter Your Name..." />
-          </FormControl>
-          <FormControl>
-            <FormLabel>Surname</FormLabel>
-            <Input placeholder="Enter Your Surname..." />
-          </FormControl>
-        </HStack>
-        <FormControl>
-          <FormLabel>Email</FormLabel>
-          <Input type="email" placeholder="Enter Your Email..." />
-        </FormControl>
-        <FormControl>
-          <FormLabel>Message</FormLabel>
-          <Textarea placeholder="Enter Your Message..." />
-        </FormControl>
-        <Checkbox defaultChecked>
-          I agree with
-          <Box as="span" color="p.purple">
-            Terms & Conditions.
-          </Box>
-        </Checkbox>
         <Stack>
-          <Button>Send a Message</Button>
-          <Button colorScheme="gray">Book a Meeting</Button>
+          <Text fontWeight="medium" fontSize="sm">
+            You will receive respone within 24 hours of time of submit.
+          </Text>
+          <HStack>
+            <FormControl>
+              <FormLabel>Name</FormLabel>
+              <Input placeholder="Enter Your Name..." />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Surname</FormLabel>
+              <Input placeholder="Enter Your Surname..." />
+            </FormControl>
+          </HStack>
+          <FormControl>
+            <FormLabel>Email</FormLabel>
+            <Input type="email" placeholder="Enter Your Email..." />
+          </FormControl>
+          <FormControl>
+            <FormLabel>Message</FormLabel>
+            <Textarea placeholder="Enter Your Message..." />
+          </FormControl>
+          <Checkbox defaultChecked>
+            I agree with
+            <Box as="span" color="p.purple">
+              Terms & Conditions.
+            </Box>
+          </Checkbox>
+          <Stack>
+            <Button>Send a Message</Button>
+            <Button colorScheme="gray">Book a Meeting</Button>
+          </Stack>
         </Stack>
       </Card>
     </Flex>
