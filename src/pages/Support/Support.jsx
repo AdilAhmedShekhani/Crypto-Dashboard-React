@@ -1,5 +1,5 @@
 import DashboardLayout from "../../components/DashboardLayout";
-import SupportCard from "../Transaction/components/SupportCard";
+import SupportCard from "./components/SupportCard";
 
 const Support = () => {
   return (

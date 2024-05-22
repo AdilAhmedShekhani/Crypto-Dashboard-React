@@ -30,7 +30,7 @@ const SupportCard = () => {
         </Text>
       </Stack>
       <Card p="6" borderRadius="1rem">
-        <Stack>
+        <Stack spacing={6}>
           <Text fontWeight="medium" fontSize="sm">
             You will receive respone within 24 hours of time of submit.
           </Text>
@@ -52,7 +52,7 @@ const SupportCard = () => {
             <FormLabel>Message</FormLabel>
             <Textarea placeholder="Enter Your Message..." />
           </FormControl>
-          <Checkbox defaultChecked>
+          <Checkbox defaultChecked fontSize="xs">
             I agree with
             <Box as="span" color="p.purple">
               Terms & Conditions.
