@@ -10,9 +10,14 @@ import {
 import { BiSupport } from "react-icons/bi";
 import { BsArrowDownUp } from "react-icons/bs";
 import { RxDashboard } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidenav = () => {
+  const location = useLocation();
+
+  const isActiveLink = (link) => {
+    return location.pathname === link;
+  };
   const navLinks = [
     {
       icon: RxDashboard,
@@ -47,6 +52,8 @@ const Sidenav = () => {
           {navLinks.map((nav) => (
             <Link to={nav.Link} key={nav.text}>
               <HStack
+                bg={isActiveLink(nav.Link) ? "#F3F3F7" : "transparent"}
+                color={isActiveLink(nav.Link) ? "#171717" : " #797E82"}
                 borderRadius="10px"
                 py="3"
                 px="4"
@@ -54,7 +61,6 @@ const Sidenav = () => {
                   bg: "#F3F3F7",
                   color: "#171717",
                 }}
-                color="#797E82"
               >
                 <Icon as={nav.icon} />
                 <Text fontSize="14px" fontWeight="medium">
@@ -71,11 +77,12 @@ const Sidenav = () => {
             borderRadius="10px"
             py="3"
             px="4"
+            bg={isActiveLink("/support") ? "#F3F3F7" : "transparent"}
+            color={isActiveLink("/support") ? "#171717" : " #797E82"}
             _hover={{
               bg: "#F3F3F7",
               color: "#171717",
             }}
-            color="#797E82"
           >
             <Icon as={BiSupport} />
             <Text fontSize="14px" fontWeight="medium">
